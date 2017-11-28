@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+
+{% block body%}
+
+<div class="slide-content">
+
+<img class="mySlides" src="/pics/intern1.png" style="width:100%; height:620px">
+<img class="mySlides" src="/pics/img1.jpg" style="width:100%; height:620px">
+<img class="mySlides" src="/pics/img2.jpg" style="width:100%; height:620px">
+<img class="mySlides" src="/pics/img3.png" style="width:100%; height:620px">
+<img class="mySlides" src="/pics/img4.png" style="width:100%; height:620px">
+
+<a class="btn-floating" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)">❮</a>
+<a class="btn-floating" style="position:absolute;top:45%;right:0" onclick="plusDivs(1)">❯</a>
+
+</div>
+<div class="mob-main">
+  <img src="/pics/keepcalmintern.jpg" class="img-responsive">
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < slides.length; i++) {
+     slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+var autoslideIndex = 0;
+magic();
+
+function magic() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+    autoslideIndex++;
+    if (autoslideIndex > slides.length) {autoslideIndex = 1}
+    slides[autoslideIndex-1].style.display = "block";
+    setTimeout(magic, 7500);
+}
+</script>
+
+{%endblock%}

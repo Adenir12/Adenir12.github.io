@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+
+{% block title %}My Profile{% endblock %} 
+
+{% block body%}
+<div class="container">
+	<div class="col-sm-6">
+		<table class="table table-responsive">
+			<thead>
+				<tr>
+					<th>{{logged_user.first_name}} 's profile </th>
+					<th><a href="/settings">Edit Profile</a></th>
+				<tr>
+			</thead>
+			<tbody>
+				<tr class="success">
+					<td>First Name</td>
+					<td>{{logged_user.first_name}}</td>
+				</tr>
+				<tr class="info">
+					<td>Last Name</td>
+					<td>{{logged_user.last_name}}</td>
+				</tr>
+				<tr class="success">
+					<td>Email</td>
+					<td>{{logged_user.email}}</td>
+				</tr>
+				<tr class="info">
+					<td>Phone</td>
+					<td>{{logged_user.phone}}</td>
+				</tr>
+				<tr class="success">
+					<td>Birthday</td>
+					<td>{{logged_user.bday}}</td>
+				</tr>
+				<tr class="info">
+					<td>Gender</td>
+					<td>{{logged_user.gender}}</td>
+				</tr>
+				<tr class="success">
+					<td>College</td>
+					<td>{{logged_user.college}}</td>
+				</tr>
+				<tr class="info">
+					<td>Address</td>
+					<td>{{logged_user.address}}</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+	<div class="col-sm-6">
+		<ul>
+			
+		</ul>	
+	</div>
+</div>
+{%endblock%}

@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+
+{% block title %}Company Profile{% endblock %} 
+
+{% block body%}
+<div class="container">
+	<div class="col-sm-6">
+		<table class="table table-responsive">
+			<thead>
+				<tr>
+					<th>{{this_cp_name.cp_name}} 's profile </th>
+					<th><a href="/settings">Edit Profile</a></th>
+				<tr>
+			</thead>
+			<tbody>
+				<tr class="success">
+					<td>Company Name</td>
+					<td>{{this_cp_name.cp_name}}</td>
+				</tr>
+				<tr class="info">
+					<td>Company Email</td>
+					<td>{{this_cp_name.cp_email}}</td>
+				</tr>
+				<tr class="success">
+					<td>Phone</td>
+					<td>{{this_cp_name.cp_phone}}</td>
+				</tr>
+				<tr class="info">
+					<td>Website</td>
+					<td>{{this_cp_name.cp_website}}</td>
+				</tr>
+				<tr class="success">
+					<td>Address</td>
+					<td>{{this_cp_name.cp_address}}</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+	<div class="col-sm-6">
+		<ul>
+			
+		</ul>	
+	</div>
+</div>
+{%endblock%}
